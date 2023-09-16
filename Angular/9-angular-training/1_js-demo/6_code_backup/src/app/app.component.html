@@ -1,0 +1,63 @@
+<!-- BINDING -->
+<app-header [myName]="myName" (changeTextEvent)="changeTextEvent($event)"/>
+
+<div [style.padding.px]="'64'">
+  <router-outlet></router-outlet>
+</div>
+
+<hr>
+
+<input type="text" [(ngModel)]="myName">
+<h1>App Component HTML</h1>
+
+<!----------------------------------- BINDING ----------------------------------->
+{{myName}}
+
+<div>
+  {{ loremText }}
+</div>
+
+<button type="button" class="btn btn-primary" (click)="handleClickFirstBtn()">First Button</button>
+<button type="button" class="btn btn-secondary" (click)="handleClickSecondBtn()">Second Button</button>
+
+
+<!----------------------------------- DIRECTIVE ----------------------------------->
+<div *ngIf="isShow">You click on first btn</div>
+<div *ngIf="!isShow">You click on second btn</div> 
+
+<div *ngIf="isShow; then first else second">here is ignored</div>
+<ng-template #first>You click on first btn...</ng-template>
+<ng-template #second>You click on second btn...</ng-template>
+
+<ul *ngIf="todos.length > 0">
+  <li *ngFor="let item of todos">{{ item.owner }} : {{item.title}}</li>
+</ul>
+
+<div 
+  [style.background]="'pink'"
+  [style.height.px]="'50'"
+  [id]="divId"
+>Hello</div>
+
+<!-- <div class="card" style="width: 18rem;" boxShadow> -->
+<div class="card" style="width: 18rem;" [boxShadow]="false">
+  <img src="https://cdn4.buysellads.net/uu/1/3386/1525189943-38523.png" class="card-img-top" alt="...">
+  <div class="card-body">
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.
+    </p>
+  </div>
+</div>
+
+
+<!----------------------------------- PIPE ----------------------------------->
+<p>The hero's birthday is {{ birthday | date }}</p>
+<p>The hero's birthday is {{ birthday | date:"MM/dd/yy" }} </p>
+<p>The hero's birthday is {{ birthday | date:"MM/dd/yy hh:mm:ss" }} </p>
+<p>{{ 'angular framework' | uppercase}} </p>
+<p>{{ 'angular framework' | uppercase | slice :4:11 }} </p>
+<p>{{ 5.154861 | percent:'1.0-3' }}</p>
+<p>{{ 55300 | currency :'VND':false:'1.0-2' }}</p>
+
+<p>{{ 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, magnam?' | formatString :0:20}}</p>
+
+

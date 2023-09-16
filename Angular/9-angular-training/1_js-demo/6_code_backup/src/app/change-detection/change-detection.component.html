@@ -1,0 +1,13 @@
+<button class="btn btn-success" (click)="soccer = soccer + 1">
+  Change Soccer
+</button>
+<button class="btn btn-danger" (click)="user.age = user.age + 5">
+  Change User
+</button>
+<button class="btn btn-secondary" (click)="numberArr.push(5)">
+  Add element into arr
+</button>
+
+<app-child-one [soccer]="soccer"></app-child-one>
+<app-child-two [user]="user"></app-child-two>
+<app-child-three [numberArr]="numberArr"></app-child-three>

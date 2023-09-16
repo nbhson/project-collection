@@ -1,0 +1,73 @@
+<div
+  class="conversation container d-flex justify-content-center align-items-center"
+>
+  <div class="card shadow-sm">
+    <div class="card-header d-flex justify-content-between">
+      <strong class="card-title mt-1 text-secondary text-center"
+        >GPT của Sơn</strong
+      >
+      <i
+        class="bi bi-x-circle-fill text-danger btn-close-danger"
+        (click)="textDisplay = ''"
+      ></i>
+    </div>
+    <div class="card-body d-flex flex-column justify-content-between">
+      <div
+        class="conversation__anwser flex-fill d-flex justify-content-center align-items-center"
+      >
+        <h6 class="card-title" *ngIf="!loading">
+          {{ handleDisplayAnswer() }}
+        </h6>
+
+        <div class="conversation__loading" *ngIf="loading">
+          <div class="spinner-grow text-danger me-3" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+          <div class="spinner-grow text-warning me-3" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+          <div class="spinner-grow text-info" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+        </div>
+      </div>
+      <form [formGroup]="form">
+        <div class="text-container" *ngIf="loading">
+          <p class="animated-text">{{animationText}}</p>
+        </div>
+        <div class="d-flex justify-content-between">
+          <div class="flex-fill">
+            <input
+              type="email"
+              class="form-control"
+              [(ngModel)]="messageQuestion"
+              formControlName="messageQuestion"
+              placeholder="Nhập gì đi..."
+            />
+          </div>
+          <div class="conversation__question">
+            <button
+              (click)="submit()"
+              (keyup.enter)="submit()"
+              class="btn btn-success btn-icon rounded-circle ms-3"
+              data-bs-toggle="tooltip"
+              data-bs-placement="top"
+              data-bs-title="Send"
+            >
+              <i class="bi bi-send-fill"></i>
+            </button>
+            <button
+              (click)="record()"
+              class="btn btn-danger btn-icon rounded-circle ms-3"
+              data-bs-toggle="tooltip"
+              data-bs-placement="top"
+              data-bs-title="Voice"
+            >
+              <i class="bi bi-mic-fill"></i>
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

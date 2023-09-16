@@ -1,0 +1,8 @@
+<div class="music-list-container">
+    <h2>Music List</h2>
+    <ul>
+      <li *ngFor="let song of songs" (click)="selectSong(song.id)">
+        {{ song.name }}
+      </li>
+    </ul>
+  </div>

@@ -1,0 +1,32 @@
+:root {
+  --c-primary: #4bcffa;
+  --c-success: #0be881;
+  --c-secondary: #7f8c8d;
+
+  --c-accent: #fa8231;
+  --c-error: #eb3b5a;
+  --c-warning: #fed330;
+  --c-info: #8854d0;
+}
+
+.primary {
+  color: var(--c-primary)
+}
+.success {
+  color: var(--c-success)
+}
+.secondary {
+  color: var(--c-secondary)
+}
+.accent {
+  color: var(--c-accent)
+}
+.error {
+  color: var(--c-error)
+}
+.warning {
+  color: var(--c-warning)
+}
+.info {
+  color: var(--c-info)
+}
