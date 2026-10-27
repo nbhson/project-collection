@@ -195,3 +195,36 @@ img.avt {
     bottom: -10px;
   }
 }
+
+/* ===== Dark mode (design system) ===== */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ds-bg: #0b1220;
+    --ds-surface: #111a2e;
+    --ds-surface-alt: #1a2438;
+    --ds-border: #27334d;
+    --ds-text: #e2e8f0;
+    --ds-text-muted: #94a3b8;
+  }
+}
+
+body.dark-mode {
+  background: var(--ds-bg);
+  color: var(--ds-text);
+}
+body.dark {
+  background: var(--ds-bg);
+  color: var(--ds-text);
+}
+body.dark .app {
+  background-image: linear-gradient(120deg, #2d1b3d 0%, #1a1229 100%);
+}
+body.dark .content {
+  background: rgba(17, 26, 46, 0.85);
+  color: var(--ds-text);
+}
+body.dark h1,
+body.dark h3,
+body.dark h4 {
+  color: var(--ds-text);
+}

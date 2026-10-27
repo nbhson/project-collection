@@ -85,4 +85,24 @@
   color: #fff;
 }
 
+/* ============================================================
+   Design System bridge (ui-tokens.css)
+   This app toggles body[data-theme="dark"] via dark-mode-switch,
+   while the design system uses a ".dark" class — sync both so
+   the --ds-* tokens go dark together.
+   ============================================================ */
+[data-theme="dark"],
+.dark {
+  --ds-bg: #0b1220;
+  --ds-surface: #111a2e;
+  --ds-surface-alt: #1a2438;
+  --ds-border: #27334d;
+  --ds-text: #e2e8f0;
+  --ds-text-muted: #94a3b8;
+  --ds-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --ds-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+  --ds-shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.5);
+  --ds-primary-light: rgba(79, 70, 229, 0.25);
+}
+
 

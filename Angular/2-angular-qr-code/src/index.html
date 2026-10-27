@@ -8,6 +8,8 @@
   <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 <body>
+  <button id="dt" style="position:fixed;top:8px;right:8px;z-index:9999;padding:6px 12px;border-radius:8px;border:none;cursor:pointer;background:var(--ds-surface);color:var(--ds-text);">🌙</button>
+  <script>document.getElementById('dt')?.addEventListener('click',()=>{document.body.classList.toggle('dark');});</script>
   <app-root></app-root>
 </body>
 </html>

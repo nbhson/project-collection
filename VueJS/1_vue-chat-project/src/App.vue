@@ -20,6 +20,7 @@ import { useCookies } from 'vue3-cookies';
 import { userInfoApi } from './api/user';
 import { useRouter } from 'vue-router';
 import { useStore } from 'vuex';
+import { useTheme } from 'vuetify';
 import { useToast } from 'vue-toastification';
 import { SERVER_ERROR } from './utils/constants/commons';
 
@@ -30,17 +31,23 @@ export default defineComponent({
     const { cookies } = useCookies();
     const router = useRouter();
     const store = useStore();
+    const theme = useTheme();
     return {
       cookies,
       toast,
       router,
       store,
+      theme,
     };
   },
   created() {
     this.syncUserAuth();
   },
   methods: {
+    toggleTheme() {
+      const current = this.theme.global.name.value;
+      this.theme.global.name.value = current === 'lightTheme' ? 'darkTheme' : 'lightTheme';
+    },
     syncUserAuth() {
       const jwtToken = this.cookies.get('jwt');
 
@@ -75,7 +82,10 @@ export default defineComponent({
 .app {
   height: 100vh;
   width: 100%;
-  background: var(--c-primary);
+  background: var(--ds-bg);
+}
+.dark-mode-app .app {
+  background: var(--ds-bg);
 }
 ::-webkit-scrollbar {
   display: none;

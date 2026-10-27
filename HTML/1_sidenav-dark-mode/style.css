@@ -35,12 +35,12 @@ body {
 }
 
 body.dark {
-  --body-color: #18191a;
-  --sidebar-color: #242526;
-  --primary-color: #3a3b3c;
-  --primary-color-light: #3a3b3c;
-  --toggle-color: #fff;
-  --text-color: #ccc;
+  /* Design system dark tokens (ui-tokens.css) drive the app's dark palette */
+  --body-color: var(--ds-bg); /* #0b1220 */
+  --sidebar-color: var(--ds-surface); /* #111a2e */
+  --primary-color-light: var(--ds-surface-alt); /* #1a2438 */
+  --toggle-color: var(--ds-border); /* #27334d */
+  --text-color: var(--ds-text-muted); /* #94a3b8 */
 }
 
 /* ===== Sidebar ===== */

@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="ns-tn-public/ns-tn-css/hover.css">
     <link rel="stylesheet" href="ns-tn-public/ns-tn-css/loading.css">
     <link rel="stylesheet" href="ns-tn-public/ns-tn-css/noel.css">
+    <link rel="stylesheet" href="ns-tn-public/ns-tn-css/ui-tokens.css">
 
     <!-- FONTS -->
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">

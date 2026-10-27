@@ -122,22 +122,31 @@ export default defineComponent({
 }
 .frame-form {
 }
+
+.ownerMsg {
+  background: #4f46e5;
+  color: #fff;
+  max-width: 350px;
+}
+.guestMsg {
+  background: var(--ds-surface-alt, #f1f5f9);
+  color: var(--ds-text, #0f172a);
+  max-width: 350px;
+}
 .frame-form input {
-  background: #f1f2f6;
+  background: var(--ds-surface-alt, #f1f5f9);
+  border: 1px solid var(--ds-border, #e2e8f0);
   outline: none;
   width: 100%;
   height: 52px;
   padding: 0 16px;
+  color: var(--ds-text, #0f172a);
+  transition: border-color var(--ds-transition, 180ms ease),
+              box-shadow var(--ds-transition, 180ms ease);
 }
-
-.ownerMsg {
-  background: #f1f2f6;
-  max-width: 350px;
-}
-.guestMsg {
-  background: var(--c-secondary);
-  color: #fff;
-  max-width: 350px;
+.frame-form input:focus {
+  border-color: #4f46e5;
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15);
 }
 
 .scroll {

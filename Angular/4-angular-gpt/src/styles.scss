@@ -1,4 +1,9 @@
+@import 'ui-tokens';
+
+/* ---- Dark mode support ---- */
+:host-context(.dark) { background: #0b1220; }
+
 /* You can add global styles to this file, and also import other style files */
 body {
-  background-color: #bdc3c7;
+  background-color: var(--ds-bg);
 }

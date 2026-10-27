@@ -1,7 +1,9 @@
+@import './ui-tokens.css';
+
 :root {
-  --c-primary: #4bcffa;
-  --c-success: #0be881;
-  --c-secondary: #7f8c8d;
+  --c-primary: #4f46e5;
+  --c-success: #10b981;
+  --c-secondary: #0ea5e9;
 
   --c-accent: #fa8231;
   --c-error: #eb3b5a;

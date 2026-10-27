@@ -1,4 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
+@import 'ui-tokens';
 @import '~angular-notifier/styles';
 @import './scss/_custom';
 @import './scss/_variable';
@@ -8,6 +9,24 @@
 @import './scss/_row';
 @import './scss/_column';
 @import './scss/_margin-padding';
+
+@use '@angular/material' as mat;
+
+// Design System Material theme
+$ds-primary: mat.define-palette(mat.$indigo-palette, 600);
+$ds-accent: mat.define-palette(mat.$light-blue-palette, A700);
+$ds-warn: mat.define-palette(mat.$red-palette);
+$ds-theme: mat.define-light-theme((
+  color: (primary: $ds-primary, accent: $ds-accent, warn: $ds-warn)
+));
+@include mat.all-component-themes($ds-theme);
+
+// Dark mode
+.dark {
+  background: #0b1220;
+  color: #e2e8f0;
+  @include mat.all-component-colors($ds-theme);
+}
 
 html,
 body {

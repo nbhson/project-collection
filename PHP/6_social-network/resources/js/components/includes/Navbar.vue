@@ -97,36 +97,46 @@ export default {
         padding: 5px;
     }
     .dropdown-toggle:hover{
-        background: rgb(228, 228, 228);
+        background: var(--ds-surface-alt, rgb(228, 228, 228));
         border-radius: 30px;
         padding: 5px;
-        box-shadow:0 .125rem .25rem rgba(0,0,0,.075)!important
+        box-shadow: var(--ds-shadow-sm, 0 .125rem .25rem rgba(0,0,0,.075))!important
     }
     a{
         text-decoration: none;
-        color: rgb(184, 184, 184);
+        color: var(--ds-text-muted, rgb(184, 184, 184));
         font-weight: bold;
+        transition: color var(--ds-transition, 180ms ease);
     }
     li{
         margin: 0 10px;
     }
 
+    /* Design System: consistent nav hover/active states */
+    .navbar-nav li.nav-item {
+        cursor: pointer;
+        transition: color var(--ds-transition, 180ms ease);
+    }
+    .navbar-nav li.nav-item:hover {
+        color: var(--ds-primary, #1877f2);
+    }
+
     .router-link-active{
-        color: #1877f2;
+        color: var(--ds-primary, #1877f2);
         /* color: rgb(39, 39, 39); */
     }
 
     .router-link-active > li.nav-item{
-       border-bottom: 4px solid #1877f2;
+       border-bottom: 4px solid var(--ds-primary, #1877f2);
     }
 
     [data-theme="dark"] .router-link-active > li.nav-item {
-        border-bottom: 4px solid #fff;
+        border-bottom: 4px solid var(--ds-text, #fff);
     }
 
 
     a.logout:hover{
-        color: red;
+        color: var(--ds-danger, red);
         font-weight: bold;
     }
     nav{
@@ -172,9 +182,9 @@ export default {
     }
 
     [data-theme="dark"] nav div ul li a{
-        color: #6c757d;
+        color: var(--ds-text-muted, #6c757d);
     }
     [data-theme="dark"] .router-link-active {
-        color: #fff;
+        color: var(--ds-text, #fff);
     }
 </style>

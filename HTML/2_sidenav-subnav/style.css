@@ -125,3 +125,24 @@
   font-size: 40px;
   text-align: center;
 } */
+
+/* ===== Dark mode (design system) ===== */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ds-bg: #0b1220;
+    --ds-surface: #111a2e;
+    --ds-surface-alt: #1a2438;
+    --ds-border: #27334d;
+    --ds-text: #e2e8f0;
+    --ds-text-muted: #94a3b8;
+  }
+}
+
+body.dark-mode {
+  background: var(--ds-bg);
+  color: var(--ds-text);
+}
+body.dark {
+  background: var(--ds-bg);
+  color: var(--ds-text);
+}

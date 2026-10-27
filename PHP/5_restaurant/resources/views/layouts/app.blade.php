@@ -19,6 +19,8 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <!-- Design System -->
+    <link rel="stylesheet" href="{{ asset('css/ui-tokens.css') }}">
 
     <!-- JS -->
     <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>

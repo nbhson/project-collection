@@ -16,6 +16,7 @@
 
     <!-- CSS -->
     <link rel="stylesheet" href="public/css/style.css">
+    <link rel="stylesheet" href="public/css/ui-tokens.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
 
     <!-- BOOTSTRAP CSS -->

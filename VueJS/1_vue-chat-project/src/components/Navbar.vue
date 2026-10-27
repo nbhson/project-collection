@@ -1,5 +1,5 @@
 <template>
-  <v-toolbar class="pa-3" color="white" style="position: absolute; top: 0; width: 100%">
+  <v-toolbar class="pa-3 navbar-ds" style="position: absolute; top: 0; width: 100%">
     <div class="d-flex justify-center" style="flex: 1">
       <!-- <img src="src/assets/cyborg.png" alt="" width="45" /> -->
       <div class="d-flex align-center">
@@ -38,6 +38,10 @@
         </v-btn>
       </temple>
     </div>
+
+    <v-btn icon class="ml-4" variant="text" @click="toggleTheme()">
+      <v-icon>{{ isDark ? 'mdi-weather-sunny' : 'mdi-weather-night' }}</v-icon>
+    </v-btn>
   </v-toolbar>
 </template>
 
@@ -50,6 +54,7 @@ import { useToast } from 'vue-toastification';
 import { SERVER_ERROR } from '../utils/constants/commons';
 import { useRouter } from 'vue-router';
 import { setLoginStatusApi } from '../api/user';
+import { useTheme } from 'vuetify';
 import mitt from 'mitt';
 
 export default defineComponent({
@@ -59,11 +64,13 @@ export default defineComponent({
     const router = useRouter();
     const { cookies } = useCookies();
     const emitter = mitt();
+    const theme = useTheme();
     return {
       cookies,
       toast,
       router,
       emitter,
+      theme,
     };
   },
   data() {
@@ -88,8 +95,15 @@ export default defineComponent({
   },
   computed: {
     ...mapGetters(['user', 'authentication']),
+    isDark(): boolean {
+      return this.theme.global.name.value === 'darkTheme';
+    },
   },
   methods: {
+    toggleTheme() {
+      this.theme.global.name.value = this.isDark ? 'lightTheme' : 'darkTheme';
+      document.documentElement.classList.toggle('dark', !this.isDark);
+    },
     submit() {
       const store = this.store;
       const cookies = this.cookies;
@@ -115,3 +129,10 @@ export default defineComponent({
   },
 });
 </script>
+
+<style scoped>
+.navbar-ds {
+  background-color: var(--ds-surface);
+  box-shadow: var(--ds-shadow-sm);
+}
+</style>
